@@ -1,9 +1,12 @@
 <template>
+  <!-- <modal v-if="isModalOn" @emitModal="toggleModal" /> -->
   <nav-bar />
+  <h2>Before Router View</h2>
   <router-view />
 </template>
 
 <script>
+// import Modal from "./components/Modal.vue";
 import NavBar from "./components/NavBar.vue";
 export default {
   components: { NavBar },
@@ -29,7 +32,9 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+}
+h2 {
+  text-align: center;
 }
 </style>

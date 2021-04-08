@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style>
+form{
+  text-align: center;
+}
 input {
   padding: 10px;
   border: 0;

@@ -1,33 +1,33 @@
 <template>
   <h2>All Member</h2>
-  <div class="home">
+  <table class="all-member">
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Age</th>
     </tr>
-    <tr v-for="member in members" :key="member.id" @click="test(member)">
-      <td>{{ member.name }}</td>
-      <td>{{ member.email }}</td>
-      <td>{{ member.age }}</td>
-    </tr>
-  </div>
+    <single-member
+      v-for="member in members"
+      :key="member.id"
+      :member="member"
+    />
+  </table>
 </template>
 
 <script>
+import SingleMember from "../components/SingleMember.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    SingleMember
+  },
   data() {
     return {
       members: []
     };
   },
   methods: {
-    test(object) {
-      console.log(object.id);
-      this.$emit("toggleModal", object);
-    }
+    
   },
   async mounted() {
     const res = await fetch("http://localhost:3000/members");
@@ -39,20 +39,17 @@ export default {
 </script>
 
 <style scoped>
-.home {
+.all-member {
   border-collapse: collapse;
   margin-left: 34%;
 }
-.home th {
+.all-member th {
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: #4caf50;
   color: white;
 }
-.home td,
-.home th {
-  border: 0.5px solid #ddd;
-  padding: 15px;
-  text-align: left;
+h2 {
+  text-align: center;
 }
 </style>

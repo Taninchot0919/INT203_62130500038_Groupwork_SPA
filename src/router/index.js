@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AddMember from '../components/AddMember.vue'
+import Modal from '../components/Modal.vue'
 const routes = [
   {
     path: '/',
@@ -19,6 +20,12 @@ const routes = [
     path: '/addmember',
     name: 'AddMember',
     component: AddMember
+  },
+  {
+    path: '/member/:id',
+    name: 'Modal',
+    component: Modal,
+    props: true
   }
 ]
 
