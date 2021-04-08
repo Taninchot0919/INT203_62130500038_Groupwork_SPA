@@ -1,19 +1,7 @@
 {
   "members": [
     {
-      "name": "Taninchot Phuwaloetthiwat",
-      "email": "Taninchot0919@live.com",
-      "age": "20",
-      "id": 1
-    },
-    {
-      "name": "ธนินโชตน์ ภูวเลิศธิวัฒน์",
-      "email": "taninchot.art@mail.kmutt.ac.th",
-      "age": "5",
-      "id": 2
-    },
-    {
-      "name": "อาทิตยา มาสันติสุข",
+      "name": "อาทิตยา มาสันติสุข Ink Za",
       "email": "inkcoolza@gmail.com",
       "age": "21",
       "id": 3
@@ -27,7 +15,7 @@
     {
       "name": "ธนินโชตน์ ภูวเลิศธิวัฒน์",
       "email": "taninchot.art@mail.kmutt.ac.th",
-      "age": "2",
+      "age": "20",
       "id": 5
     }
   ]

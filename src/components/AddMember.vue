@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-form{
+form {
   text-align: center;
 }
 input {
@@ -59,9 +59,7 @@ form button {
   padding: 10px;
   margin-top: 20px;
   border: none;
-  background-color: #42b983;
-}
-form button:hover {
+  background-color: #2ecc40;
   color: white;
   cursor: pointer;
 }
