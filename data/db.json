@@ -1,10 +1,22 @@
 {
-  "registered": [
+  "members": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Taninchot",
       "email": "Taninchot0919@live.com",
       "age": "20"
+    },
+    {
+      "name": "ธนินโชตน์ ภูวเลิศธิวัฒน์",
+      "email": "taninchot.art@mail.kmutt.ac.th",
+      "age": "5",
+      "id": 2
+    },
+    {
+      "name": "อาทิตยา มาสันติสุข",
+      "email": "inkcoolza@gmail.com",
+      "age": "21",
+      "id": 3
     }
   ]
 }
