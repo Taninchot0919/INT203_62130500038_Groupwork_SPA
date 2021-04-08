@@ -1,5 +1,6 @@
 <template>
-  <div class="modal">
+  <div class="modal" @submit.prevent="">
+    <h2>Edit or Delete</h2>
     <span class="material-icons" @click="emitModal"> close </span>
     <form>
       <label>Name : </label>
@@ -8,7 +9,8 @@
       <input type="email" v-model="email" required /> <br />
       <label>Age : </label>
       <input type="number" v-model="age" required /><br />
-      <button>Submit</button>
+      <button class="submit" @click="editMember">Edit</button>
+      <button class="delete">Delete</button>
     </form>
   </div>
 </template>
@@ -28,13 +30,29 @@ export default {
     emitModal() {
       console.log("can access at modal");
       this.$emit("emitModal");
+      this.$router.push("/");
+    },
+    async editMember() {
+      console.log("editMemberMethod");
+      let editData = {
+        name: this.name,
+        email: this.email,
+        age: this.age
+      };
+      const res = await fetch(this.url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(editData)
+      });
+      console.log(res)
+      this.$router.push('/')
     }
   },
   async mounted() {
     console.log(this.url);
     const res = await fetch(this.url);
     const data = await res.json();
-    console.log(this.members);
+    console.log(data);
     this.name = data.name;
     this.email = data.email;
     this.age = data.age;
@@ -44,14 +62,24 @@ export default {
 
 <style scoped>
 .modal {
-  background-color: rebeccapurple;
   background-size: 100%;
   width: 100%;
   height: 100vh;
   text-align: right;
 }
-.material-icons {
+.submit {
+  background-color: #4caf50;
+  padding: 10px 15px 10px 15px;
+  margin-right: 10px;
   color: white;
+}
+.delete {
+  background-color: crimson;
+  padding: 10px 15px 10px 15px;
+  color: white;
+}
+.material-icons {
+  color: black;
   font-size: 50px;
   margin-top: 10px;
   margin-right: 30px;

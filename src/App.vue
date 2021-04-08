@@ -1,7 +1,7 @@
 <template>
   <!-- <modal v-if="isModalOn" @emitModal="toggleModal" /> -->
   <nav-bar />
-  <h2>Before Router View</h2>
+  <!-- <h2>Before Router View</h2> -->
   <router-view />
 </template>
 

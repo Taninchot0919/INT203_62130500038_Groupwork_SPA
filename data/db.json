@@ -1,10 +1,10 @@
 {
   "members": [
     {
-      "id": 1,
-      "name": "Taninchot",
+      "name": "Taninchot Phuwaloetthiwat",
       "email": "Taninchot0919@live.com",
-      "age": "20"
+      "age": "20",
+      "id": 1
     },
     {
       "name": "ธนินโชตน์ ภูวเลิศธิวัฒน์",
@@ -19,10 +19,16 @@
       "id": 3
     },
     {
-      "name": "กานต์กมล",
+      "name": "กานต์กมล พัฒนภิรมย์",
       "email": "karnkamol.sit@mail.kmutt.ac.th",
       "age": "19",
       "id": 4
+    },
+    {
+      "name": "ธนินโชตน์ ภูวเลิศธิวัฒน์",
+      "email": "taninchot.art@mail.kmutt.ac.th",
+      "age": "2",
+      "id": 5
     }
   ]
 }
