@@ -24,6 +24,7 @@ export default {
   color: #2d6a4f;
   margin-left: 10px;
   text-decoration: none;
+  font-size: large;
 }
 
 #nav a.router-link-exact-active {
