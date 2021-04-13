@@ -1,5 +1,8 @@
 <template>
-  <div class="modal" @submit.prevent="">
+  <div class="not-found" v-if="checkMember.length == 0">
+    <p>Not Found</p>
+  </div>
+  <div class="modal" v-else @submit.prevent="">
     <h2>Edit or Delete</h2>
     <span class="material-icons" @click="backToHome"> close </span>
     <form>
@@ -14,7 +17,7 @@
         <input
           type="checkbox"
           value="true"
-          v-model="readyToDelete"
+          v-model="readyToConfirm"
           required
         /><br />
       </div>
@@ -26,6 +29,7 @@
 
 <script>
 export default {
+  name: "Modal",
   props: ["id"],
   data() {
     return {
@@ -33,7 +37,8 @@ export default {
       email: "",
       age: "",
       url: "http://localhost:3000/members/" + this.id,
-      readyToDelete: false
+      readyToConfirm: false,
+      checkMember: [],
     };
   },
   methods: {
@@ -41,53 +46,47 @@ export default {
       this.$router.push("/");
     },
     async editMember() {
-      if (this.readyToDelete) {
-        console.log("Edit Member Method");
+      if (this.readyToConfirm) {
         let editData = {
           name: this.name,
           email: this.email,
-          age: this.age
+          age: this.age,
         };
-        const res = await fetch(this.url, {
+        await fetch(this.url, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(editData)
+          body: JSON.stringify(editData),
         });
-        console.log(res);
         this.$router.push("/");
       }
     },
     async deleteMember() {
-      if (this.readyToDelete) {
-        console.log("Delete Member Method");
+      if (this.readyToConfirm) {
         await fetch(this.url, {
-          method: "DELETE"
+          method: "DELETE",
         });
         this.$router.push("/");
       }
-    }
+    },
   },
   async mounted() {
-    console.log(this.url);
     const res = await fetch(this.url);
     const data = await res.json();
-    console.log(data);
+    this.checkMember = data;
     this.name = data.name;
     this.email = data.email;
     this.age = data.age;
-  }
+  },
 };
 </script>
 
 <style scoped>
 .modal {
-  background-size: 100%;
   width: 100%;
-  height: 100vh;
   text-align: right;
 }
 .submit {
-  background-color: #2ecc40;
+  background-color: #2a9134;
   padding: 10px 15px 10px 15px;
   margin-right: 10px;
   color: white;
@@ -100,11 +99,15 @@ export default {
 .material-icons {
   color: black;
   font-size: 50px;
-  margin-top: 10px;
-  margin-right: 30px;
+  margin-right: 5%;
   cursor: pointer;
 }
 .confirm {
   margin-top: 20px;
+}
+h2 {
+  color: green;
+  text-shadow: 1px 1px 0px rgb(0, 0, 0);
+  font-size: 50px;
 }
 </style>

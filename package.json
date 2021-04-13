@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "db" : "json-server --watch data/db.json"
+    "db": "json-server --watch data/db.json"
   },
   "dependencies": {
     "core-js": "^3.6.5",

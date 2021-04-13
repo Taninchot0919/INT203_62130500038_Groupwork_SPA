@@ -8,11 +8,7 @@
 
 <script>
 export default {
-  methods: {
-    methodEmit() {
-      console.log("Can access");
-    }
-  }
+  name: "Navbar",
 };
 </script>
 
@@ -20,15 +16,21 @@ export default {
 #nav {
   padding: 30px;
   text-align: center;
+  background-color: black;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #2d6a4f;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+#nav a:hover {
+  color: #95d5b2;
 }
 </style>

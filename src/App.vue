@@ -1,31 +1,21 @@
 <template>
-  <!-- <modal v-if="isModalOn" @emitModal="toggleModal" /> -->
   <nav-bar />
-  <!-- <h2>Before Router View</h2> -->
   <router-view />
 </template>
 
 <script>
-// import Modal from "./components/Modal.vue";
 import NavBar from "./components/NavBar.vue";
 export default {
   components: { NavBar },
-  data() {
-    return {
-      isModalOn: false
-    };
-  },
-  methods: {
-    toggleModal() {
-      console.log("can emit");
-      this.isModalOn = !this.isModalOn;
-    }
-  }
+  name: "App",
 };
 </script>
 
 <style>
 body {
+  background-color: #f8f9fa;
+  display: block;
+  width: 100%;
   margin: 0;
 }
 #app {

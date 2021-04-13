@@ -8,13 +8,13 @@
 
 <script>
 export default {
+  name: "SingleMember",
   props: ["member"],
   methods: {
     emitTableRow(member) {
-      console.log(member);
       this.$router.push({ name: "Modal", params: { id: member.id } });
-    }
-  }
+    },
+  },
 };
 </script>
 
